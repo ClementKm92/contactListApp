@@ -1,11 +1,6 @@
-// See the Electron documentation for details on how to use preload scripts:
-// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
-const {contextBridge, ipcRenderer} =require("electron")
 
-/*contextBridge.exposeInMainWorld("monApi", {
-    create
-  },
+const { ipcRenderer, contextBridge } = require("electron");
 
-
-
-});*/
+contextBridge.exposeInMainWorld("monApi", {
+  createContactWindow: () => ipcRenderer.send("new-contact-window"),
+});

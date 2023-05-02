@@ -1,9 +1,13 @@
-let contact = document.getElementById("contact");
-let lien = document.getElementById("lien");
-let imp = document.getElementById("import");
-let add = document.getElementById("add");
 
+let btnExp = document.querySelector("#exp");
+let btnExpList = document.querySelector("#expList");
+let btnImp = document.querySelector("#imp");
+let btnAdd = document.querySelector("#add");
 
-add.addEventListener("click",() =>{
-    monApi.createWindow();
-})
+btnAdd.addEventListener("click", () => {
+  monApi.createContactWindow();
+});
+
+function createContactWindow() {
+  createWindow(500, 300, "contact.html");
+}
