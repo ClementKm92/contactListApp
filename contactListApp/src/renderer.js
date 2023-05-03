@@ -1,4 +1,3 @@
-
 let btnExp = document.querySelector("#exp");
 let btnExpList = document.querySelector("#expList");
 let btnImp = document.querySelector("#imp");
@@ -11,3 +10,7 @@ btnAdd.addEventListener("click", () => {
 function createContactWindow() {
   createWindow(500, 300, "contact.html");
 }
+
+store.onGetReply((e, value) => {
+  console.log(value);
+});
