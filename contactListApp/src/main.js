@@ -1,4 +1,5 @@
-
+const Store = require("electron-store");
+const store = new Store();
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const fs = require("fs");
@@ -57,3 +58,14 @@ function setUpIpc() {
     createWindow(500, 300, "contact.html");
   });
 }
+
+ipcMain.on("store-set", (e, key, value) => {
+  store.set(key, value);
+});
+
+ipcMain.on("store-get", (e, key) => {
+  let result = store.get(key);
+  e.sender.send("store-get-reply", result);
+});
+
+ipcMain.on("store-delete", () => {});
