@@ -74,6 +74,12 @@ body {
    form .pied-formulaire button:hover{
     transform: scale(1.05);
    }
+
+   @media screen and (max-width:928px){
+    form .formulaire .deux{
+      margin-left: 0px;
+    }
+   }
    
   
   
